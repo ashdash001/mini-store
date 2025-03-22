@@ -23,7 +23,7 @@ const corsOptions: cors.CorsOptions = {
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 };
-app.use(helmet());
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 
 app.use(cors(corsOptions));
 
