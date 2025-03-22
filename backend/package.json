@@ -1,17 +1,19 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "description": "Mini store backend",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --files src/index.ts",
-    "build": "tsc && cp /package.json ./dist",
-    "start": "node dist/index.js",
-    "start:prod": "NODE_ENV=production node dist/index.js"
+    "dev": "ts-node-dev --transpile-only --files src/index.ts",
+   "build": "tsc && npm install && prisma generate --schema=./prisma/schema.prisma && npm install",
+		"start": "node ./dist/index.js"
   },
   "keywords": [],
-  "author": "tilak",
+  "author": "Tilak",
   "license": "ISC",
-  "description": "mini store backend",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "@prisma/client": "^6.5.0",
     "bcryptjs": "^2.4.3",
@@ -39,6 +41,10 @@
     "@types/nodemailer": "^6.4.17",
     "prisma": "^6.5.0",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.1.3"
   }
 }
