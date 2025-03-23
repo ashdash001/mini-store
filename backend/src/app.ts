@@ -20,10 +20,10 @@ app.use(express.static("public"));
 const corsOptions: cors.CorsOptions = {
   origin: CORS_ORIGIN,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  allowedHeaders: ["Content-Type", "Authorization", "cache-control"],
   credentials: true,
 };
-app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+app.use(helmet());
 
 app.use(cors(corsOptions));
 
