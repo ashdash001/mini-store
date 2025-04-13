@@ -13,7 +13,7 @@ export const cat = {
   camerasAndPhotos: "camerasAndPhotos",
 };
 
-const uri = "http://localhost:5000/assets";
+const uri = "https://mini-store-1.onrender.com/assets";
 
 export const categories = [
   {
